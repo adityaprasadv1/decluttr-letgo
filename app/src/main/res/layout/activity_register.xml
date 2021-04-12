@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".RegisterActivity">
+
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardView2"
+    android:layout_width="320dp"
+    android:layout_height="530dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/txtCreateUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:ems="10"
+            android:hint="Bruce Wayne"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/txtCreateEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:ems="10"
+            android:hint="bruce@wayn.com"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/txtCreatePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:ems="10"
+            android:hint="9PWEpd%7VA$DN2"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btnCreateRegister"
+            android:layout_width="206dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:text="REGISTER" />
+
+        <Button
+            android:id="@+id/btnCreateLogin"
+            android:layout_width="204dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:text="Login" />
+
+        <ProgressBar
+            android:id="@+id/createProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
