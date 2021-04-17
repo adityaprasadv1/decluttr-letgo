@@ -12,6 +12,7 @@
         <activity android:name=".CreateAd"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".home"/>
+        <activity android:name=".Products"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
