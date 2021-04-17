@@ -92,7 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
 //                    startActivity(new Intent(MainActivity.this, CardPage.class));
+
                     Toast.makeText(MainActivity.this, "Login Success!", Toast.LENGTH_LONG).show();
+                    Intent myIntent = new Intent(MainActivity.this,CreateAd.class);
+                    startActivity(myIntent);
                 } else {
                     Toast.makeText(MainActivity.this, "Login failed! Check credentials again!", Toast.LENGTH_LONG).show();
                 }
