@@ -1,6 +1,8 @@
 package com.example.myshoppingstore;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,11 +15,14 @@ public class home extends AppCompatActivity {
     String url1 = "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png";
     String url2 = "https://qphs.fs.quoracdn.net/main-qimg-8e203d34a6a56345f86f1a92570557ba.webp";
     String url3 = "https://bizzbucket.co/wp-content/uploads/2020/08/Life-in-The-Metro-Blog-Title-22.png";
+    Button btnCreateAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        btnCreateAd = findViewById(R.id.btnCreateAd);
 
         // we are creating array list for storing our image urls.
         ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
@@ -51,5 +56,10 @@ public class home extends AppCompatActivity {
 
         // to start autocycle below method is used.
         sliderView.startAutoCycle();
+
+        btnCreateAd.setOnClickListener(v -> {
+            Intent myIntent = new Intent(v.getContext(),CreateAd.class);
+            startActivity(myIntent);
+        });
     }
 }
