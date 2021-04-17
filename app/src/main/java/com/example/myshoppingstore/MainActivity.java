@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                    startActivity(new Intent(MainActivity.this, CardPage.class));
 
                     Toast.makeText(MainActivity.this, "Login Success!", Toast.LENGTH_LONG).show();
+                    Intent myIntent = new Intent(MainActivity.this,home.class);
+                    startActivity(myIntent);
                 } else {
                     Toast.makeText(MainActivity.this, "Login failed! Check credentials again!", Toast.LENGTH_LONG).show();
                 }

@@ -67,18 +67,30 @@ public class CreateAd extends AppCompatActivity {
         btnCam = findViewById(R.id.btnCam);
         txtName = findViewById(R.id.txtName);
 
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            Log.i("permission","permission");
-            ActivityCompat.requestPermissions(this,new String[]{
-                    Manifest.permission.CAMERA
-            },200);
-
-        }
+//        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+//            Log.i("permission","permission");
+//            ActivityCompat.requestPermissions(this,new String[]{
+//                    Manifest.permission.CAMERA
+//            },200);
+//
+//        }
 
 
         btnCam.setOnClickListener(v ->{
-            Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(i,1);
+
+            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(i, 1);
+            }
+
+            else if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+                Log.i("permission","permission");
+                ActivityCompat.requestPermissions(this,new String[]{
+                        Manifest.permission.CAMERA
+                },200);
+
+            }
+
         });
     }
 }
