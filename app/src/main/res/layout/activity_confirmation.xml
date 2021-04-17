@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10sp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="15sp"
+    tools:context=".confirmation">
+
+    <TextView
+        android:id="@+id/txtThanks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thanks for buying"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtThanksProductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/txtFromUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="from us!"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnContinueShopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Continue Shopping"
+        android:textColor="#000000"
+        app:strokeWidth="1dp" />
+</LinearLayout>
