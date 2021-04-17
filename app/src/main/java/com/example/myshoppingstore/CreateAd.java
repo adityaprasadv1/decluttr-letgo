@@ -26,9 +26,14 @@ public class CreateAd extends AppCompatActivity {
 
 
     EditText txtName;
+    EditText txtDescription;
+    EditText txtPrice;
     Button btnCam;
     StorageReference storageRef;
     String name;
+    String description;
+    double price;
+    String stringPrice;
     //Query query;
 
     @Override
@@ -50,10 +55,17 @@ public class CreateAd extends AppCompatActivity {
             CreateForm i = new CreateForm();
             i.setImage("gs://my-shopping-store-auth.appspot.com/"+imgRef.getName());
             name = txtName.getText().toString();
+            description = txtDescription.getText().toString();
+            stringPrice = txtPrice.getText().toString();
+            price = Double.valueOf(stringPrice);
             Log.i("name",name);
             i.setName(name);
+            i.setDescription(description);
+            i.setPrice(price);
             FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
         }
+        Intent productIntent = new Intent(CreateAd.this,Products.class);
+        startActivity(productIntent);
     }
 
     @Override
@@ -66,7 +78,8 @@ public class CreateAd extends AppCompatActivity {
 
         btnCam = findViewById(R.id.btnCam);
         txtName = findViewById(R.id.txtName);
-
+        txtDescription=findViewById(R.id.txtDescription);
+        txtPrice=findViewById(R.id.txtPrice);
 //        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
 //            Log.i("permission","permission");
 //            ActivityCompat.requestPermissions(this,new String[]{
