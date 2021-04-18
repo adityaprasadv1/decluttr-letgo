@@ -54,6 +54,8 @@ public class CreateAd extends AppCompatActivity {
             i.setName(name);
             FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
         }
+        Intent productIntent = new Intent(CreateAd.this,Products.class);
+        startActivity(productIntent);
     }
 
     @Override
