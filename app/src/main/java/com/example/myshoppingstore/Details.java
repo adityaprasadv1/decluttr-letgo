@@ -33,20 +33,20 @@ public class Details extends AppCompatActivity {
         productRating = findViewById(R.id.productRating);
         productDescription = findViewById(R.id.productDescription);
 
-        StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(productImageFromDB);
-        Glide.with(productImage.getContext()).load(storeRef).into(productImage);
-        productName.setText(productNameFromDB);
-        productPrice.setText("$"+productPriceFromDB);
-        productRating.setRating(productRatingFromDB);
-        productDescription.setText(productDescriptionFromDB);
-        btnBuynow = (Button)findViewById(R.id.btnBuynow);
-        btnBuynow.setOnClickListener(v -> { //moving into checkout form when user clicks buy now button
-            Intent displayIntent = new Intent(activity_display.this, activity_checkout.class);
-
-            //passing product name, price which came from DB to checkout form to show the purchase details
-            displayIntent.putExtra("productName",productNameFromDB);
-            displayIntent.putExtra("productPrice",productPriceFromDB);
-            startActivity(displayIntent);
-        });
+//        StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(productImageFromDB);
+//        Glide.with(productImage.getContext()).load(storeRef).into(productImage);
+//        productName.setText(productNameFromDB);
+//        productPrice.setText("$"+productPriceFromDB);
+//        productRating.setRating(productRatingFromDB);
+//        productDescription.setText(productDescriptionFromDB);
+//        btnBuynow = (Button)findViewById(R.id.btnBuynow);
+//        btnBuynow.setOnClickListener(v -> { //moving into checkout form when user clicks buy now button
+//            Intent displayIntent = new Intent(activity_display.this, activity_checkout.class);
+//
+//            //passing product name, price which came from DB to checkout form to show the purchase details
+//            displayIntent.putExtra("productName",productNameFromDB);
+//            displayIntent.putExtra("productPrice",productPriceFromDB);
+//            startActivity(displayIntent);
+//        });
     }
 }
