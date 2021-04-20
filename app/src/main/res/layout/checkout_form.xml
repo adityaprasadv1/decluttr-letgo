@@ -163,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="1"
-                        android:hint="1-6"
+                        android:hint="1-10"
                         android:inputType="number"
                         android:maxLength="1"
                         android:textAlignment="center"

@@ -8,12 +8,13 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="15sp"
-    tools:context=".confirmation">
+    tools:context=".Confirmation">
 
     <TextView
         android:id="@+id/txtThanks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="serif"
         android:text="Thanks for buying"
         android:textAlignment="center"
         android:textSize="28sp"
@@ -23,6 +24,7 @@
         android:id="@+id/txtThanksProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:text="Product Name"
         android:textAlignment="center"
         android:textSize="28sp"
@@ -32,6 +34,7 @@
         android:id="@+id/txtFromUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="serif"
         android:text="from us!"
         android:textAlignment="center"
         android:textSize="28sp"

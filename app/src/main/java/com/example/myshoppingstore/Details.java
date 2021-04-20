@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +45,7 @@ public class Details extends AppCompatActivity {
 
         btnBuynow = (Button)findViewById(R.id.btnBuynow);
         btnBuynow.setOnClickListener(v -> { //moving into checkout form when user clicks buy now button
-            Intent checkoutIntent = new Intent(Details.this, activity_checkout.class);
+            Intent checkoutIntent = new Intent(Details.this, Checkout.class);
 
             //passing product name, price which came from DB to checkout form to show the purchase details
             checkoutIntent.putExtra("productName",productNameFromDB);

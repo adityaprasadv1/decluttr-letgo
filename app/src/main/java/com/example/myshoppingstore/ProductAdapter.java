@@ -41,9 +41,7 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductA
     class ProductHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView productImage;
-        TextView productName;
-        TextView productPrice;
-        RatingBar productDescription;
+        TextView productName, productPrice;
 
         public ProductHolder(LayoutInflater inflater,ViewGroup parent){
             super(inflater.inflate(R.layout.row_layout, parent, false));

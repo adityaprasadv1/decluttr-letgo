@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;
 
-public class activity_checkout extends AppCompatActivity {
+public class Checkout extends AppCompatActivity {
 
     //Declaring button, textview, edittext, radio button variables for further use
     TextView productName, totalAmount, txtQuantityMessage;
@@ -81,7 +81,6 @@ public class activity_checkout extends AppCompatActivity {
             txtExpiry.setText("");
         });
 
-
         //checking all the fields, validating when the user clicks on the proceed button and displaying appropriate error messages
         btnProceed.setOnClickListener(proceed ->{
             if(txtFirstName.getText().toString().isEmpty()){
@@ -102,8 +101,11 @@ public class activity_checkout extends AppCompatActivity {
             else if(txtCardNumber.getText().toString().isEmpty()){
                 if(radioCash.isChecked() && txtCardNumber.getText().toString().isEmpty()){
                     //proceeding to confirmation message page when user selects Cash option
-                    Intent checkoutConfirmIntent = new Intent(proceed.getContext(), confirmation.class);
-                    startActivity(checkoutConfirmIntent);
+                    Intent confirmationIntent = new Intent(proceed.getContext(), Confirmation.class);
+
+                    confirmationIntent.putExtra("productName", productNameFromDB);
+
+                    startActivity(confirmationIntent);
                     finish(); //stopping user from going back to checkout form after confirmation by closing/finishing this activity
                 }
                 else {
@@ -113,8 +115,11 @@ public class activity_checkout extends AppCompatActivity {
             else if(txtCVV.getText().toString().isEmpty()){
                 if(radioCash.isChecked() && txtCVV.getText().toString().isEmpty()){
                     //proceeding to confirmation message page when user selects cash option
-                    Intent checkoutConfirmIntent = new Intent(proceed.getContext(), confirmation.class);
-                    startActivity(checkoutConfirmIntent);
+                    Intent confirmationIntent = new Intent(proceed.getContext(), Confirmation.class);
+
+                    confirmationIntent.putExtra("productName", productNameFromDB);
+
+                    startActivity(confirmationIntent);
                     finish(); //stopping user from going back to checkout form after confirmation by closing/finishing this activity
                 }
                 else {
@@ -124,8 +129,11 @@ public class activity_checkout extends AppCompatActivity {
             else if(txtExpiry.getText().toString().isEmpty()){
                 if(radioCash.isChecked() && txtExpiry.getText().toString().isEmpty()){
                     //proceeding to confirmation message page when user selects cash option
-                    Intent checkoutConfirmIntent = new Intent(proceed.getContext(), confirmation.class);
-                    startActivity(checkoutConfirmIntent);
+                    Intent confirmationIntent = new Intent(proceed.getContext(), Confirmation.class);
+
+                    confirmationIntent.putExtra("productName", productNameFromDB);
+
+                    startActivity(confirmationIntent);
                     finish(); //stopping user from going back to checkout form after confirmation by closing/finishing this activity
                 }
                 else {
@@ -134,14 +142,20 @@ public class activity_checkout extends AppCompatActivity {
             }
             else if(radioCash.isChecked() && txtCardNumber.getText().toString().isEmpty()){
                 //proceeding to confirmation message page when user selects cash
-                Intent checkoutConfirmIntent = new Intent(proceed.getContext(), confirmation.class);
-                startActivity(checkoutConfirmIntent);
+                Intent confirmationIntent = new Intent(proceed.getContext(), Confirmation.class);
+
+                confirmationIntent.putExtra("productName", productNameFromDB);
+
+                startActivity(confirmationIntent);
                 finish(); //stopping user from going back to checkout form after confirmation by closing/finishing this activity
             }
             else {
                 //proceeding to confirmation message page when all the input fields are satisfied
-                Intent checkoutConfirmIntent = new Intent(proceed.getContext(), confirmation.class);
-                startActivity(checkoutConfirmIntent);
+                Intent confirmationIntent = new Intent(proceed.getContext(), Confirmation.class);
+
+                confirmationIntent.putExtra("productName", productNameFromDB);
+
+                startActivity(confirmationIntent);
                 finish(); //stopping user from going back to checkout form after confirmation by closing/finishing this activity
             }
         });
@@ -149,7 +163,6 @@ public class activity_checkout extends AppCompatActivity {
         btnCancel.setOnClickListener(cancel ->{ //when the user clicks on the cancel button, closing the form to go back to previous page
             finish();
         });
-
 
         txtQuantityMessage.setText(""); //setting quantity message to empty string to make sure the message is empty when the form is loaded
 
@@ -166,7 +179,7 @@ public class activity_checkout extends AppCompatActivity {
                 if(userInput.length() != 0){
                     int quantity = Integer.parseInt(userInput.toString());
 
-                    if(quantity >= 1 && quantity <= 6){
+                    if(quantity >= 1 && quantity <= 10){
                         Double double_price = quantity * productPriceFromDB; //calculating total price
                         totalAmount.setText("$" + df.format(double_price)); //setting total amount in "totalAmount" textview after converting it into 2 decimal format
                     }
@@ -176,9 +189,9 @@ public class activity_checkout extends AppCompatActivity {
                         totalAmount.setText("$" + productPriceFromDB); //setting price in textview
                     }
                     else {
-                        txtQuantity.setText("6"); //if user enters >6 for quantity, converting it to 6
-                        txtQuantityMessage.setText("Sorry, we can give only 6 Coffees per order!"); //displaying the quantity change message to the user
-                        totalAmount.setText("$" + df.format(productPriceFromDB * 6)); //hence setting product price to that of 6 items
+                        txtQuantity.setText("10"); //if user enters >10 for quantity, converting it to 10
+                        txtQuantityMessage.setText("Sorry, we can give only 10 Coffees per order!"); //displaying the quantity change message to the user
+                        totalAmount.setText("$" + df.format(productPriceFromDB * 10)); //hence setting product price to that of 10 items
                     }
                 }
                 else if(userInput.length() == 0){

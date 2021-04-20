@@ -15,10 +15,8 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -101,9 +99,7 @@ public class CreateAd extends AppCompatActivity {
                 ActivityCompat.requestPermissions(this,new String[]{
                         Manifest.permission.CAMERA
                 },200);
-
             }
-
         });
     }
 
@@ -123,7 +119,7 @@ public class CreateAd extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         //  Action for 'NO' Button
                         dialog.cancel();
-                        Intent homeIntent = new Intent(CreateAd.this,home.class);
+                        Intent homeIntent = new Intent(CreateAd.this, Home.class);
                         startActivity(homeIntent);
                     }
                 });

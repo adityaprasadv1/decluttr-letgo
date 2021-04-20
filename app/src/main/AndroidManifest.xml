@@ -11,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyShoppingStore">
+        <activity android:name=".Login"></activity>
         <activity android:name=".CreateAd" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".home" />
+        <activity android:name=".Home" />
         <activity android:name=".Products" />
         <activity android:name=".MainActivity">
             <intent-filter>
