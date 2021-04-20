@@ -1,10 +1,12 @@
 package com.example.myshoppingstore;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -25,7 +27,7 @@ import java.util.UUID;
 
 public class CreateAd extends AppCompatActivity {
 
-
+    AlertDialog.Builder builder;
     EditText txtName;
     EditText txtDescription;
     EditText txtPrice;
@@ -36,7 +38,6 @@ public class CreateAd extends AppCompatActivity {
     String description;
     double price;
     String stringPrice;
-    //Query query;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -66,13 +67,10 @@ public class CreateAd extends AppCompatActivity {
             i.setPrice(price);
             btnCreate.setOnClickListener(c -> {
                 FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
-                Toast.makeText(CreateAd.this, "Ad Created", Toast.LENGTH_LONG).show();
-                Intent productIntent = new Intent(CreateAd.this,Products.class);
-                startActivity(productIntent);
+                //Toast.makeText(CreateAd.this, "Ad Created", Toast.LENGTH_LONG).show();
+                dialog();
             });
-
         }
-
     }
 
     @Override
@@ -88,15 +86,6 @@ public class CreateAd extends AppCompatActivity {
         txtDescription=findViewById(R.id.txtDescription);
         txtPrice=findViewById(R.id.txtPrice);
         btnCreate = findViewById(R.id.btnCreate);
-
-//        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-//            Log.i("permission","permission");
-//            ActivityCompat.requestPermissions(this,new String[]{
-//                    Manifest.permission.CAMERA
-//            },200);
-//
-//        }
-
 
         btnCam.setOnClickListener(v ->{
 
@@ -114,5 +103,32 @@ public class CreateAd extends AppCompatActivity {
             }
 
         });
+    }
+
+    protected void dialog(){
+
+        //Setting message manually and performing action on button click
+        builder.setMessage("Continue to Products page?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        Intent productIntent = new Intent(CreateAd.this,Products.class);
+                        startActivity(productIntent);
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+                        Intent homeIntent = new Intent(CreateAd.this,home.class);
+                        startActivity(homeIntent);
+                    }
+                });
+        //Creating dialog box
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("Ad created successfully!");
+        alert.show();
     }
 }
