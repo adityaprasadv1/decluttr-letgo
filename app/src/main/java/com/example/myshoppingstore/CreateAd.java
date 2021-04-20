@@ -69,6 +69,8 @@ public class CreateAd extends AppCompatActivity {
                 FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
                 //Toast.makeText(CreateAd.this, "Ad Created", Toast.LENGTH_LONG).show();
                 dialog();
+//                Intent productIntent = new Intent(CreateAd.this,Products.class);
+//                startActivity(productIntent);
             });
         }
     }
