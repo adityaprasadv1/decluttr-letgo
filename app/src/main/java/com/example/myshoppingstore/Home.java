@@ -1,11 +1,15 @@
 package com.example.myshoppingstore;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
@@ -15,7 +19,8 @@ public class Home extends AppCompatActivity {
     String url1 = "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png";
     String url2 = "https://qphs.fs.quoracdn.net/main-qimg-8e203d34a6a56345f86f1a92570557ba.webp";
     String url3 = "https://bizzbucket.co/wp-content/uploads/2020/08/Life-in-The-Metro-Blog-Title-22.png";
-    Button btnCreateAd, btnProducts;
+    Button btnCreateAd, btnProducts,signoutBtn;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +29,11 @@ public class Home extends AppCompatActivity {
 
         btnCreateAd = findViewById(R.id.btnCreateAd);
         btnProducts = findViewById(R.id.btnProducts);
+        signoutBtn = findViewById(R.id.signoutButton);
+        mAuth = FirebaseAuth.getInstance();
+
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(this);
 
         // we are creating array list for storing our image urls.
         ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
@@ -69,5 +79,32 @@ public class Home extends AppCompatActivity {
             Intent productsIntent = new Intent(v.getContext(),Products.class);
             startActivity(productsIntent);
         });
+
+        signoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setTitle( "Signout" )
+                        .setMessage("Do you want to signout?")
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialoginterface, int i) {
+                                dialoginterface.cancel();
+                            }})
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialoginterface, int i) {
+
+                                dialoginterface.dismiss();
+                                mAuth = FirebaseAuth.getInstance();
+                                mAuth.signOut();
+                                Intent intent = new Intent(getApplicationContext(), Login.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                        | Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }).show();
+            }
+        });
     }
+
 }

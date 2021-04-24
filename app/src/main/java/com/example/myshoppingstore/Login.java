@@ -24,8 +24,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private TextView register;
     private EditText txtEmail, txtPassword;
-    private Button btnLogin;
     private ProgressBar progressBar;
+    private Button btnLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
+        if (mAuth.getCurrentUser() != null) {
+            // User is signed in (getCurrentUser() will be null if not signed in)
+            Intent intent = new Intent(this, Home.class);
+            startActivity(intent);
+            finish();
+        }
     }
+
 
     @Override
     public void onClick(View v) {
