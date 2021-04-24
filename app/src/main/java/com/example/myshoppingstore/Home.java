@@ -15,7 +15,7 @@ public class Home extends AppCompatActivity {
     String url1 = "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png";
     String url2 = "https://qphs.fs.quoracdn.net/main-qimg-8e203d34a6a56345f86f1a92570557ba.webp";
     String url3 = "https://bizzbucket.co/wp-content/uploads/2020/08/Life-in-The-Metro-Blog-Title-22.png";
-    Button btnCreateAd;
+    Button btnCreateAd, btnProducts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         btnCreateAd = findViewById(R.id.btnCreateAd);
+        btnProducts = findViewById(R.id.btnProducts);
 
         // we are creating array list for storing our image urls.
         ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
@@ -60,8 +61,13 @@ public class Home extends AppCompatActivity {
         });
 
         btnCreateAd.setOnClickListener(v -> {
-            Intent myIntent = new Intent(v.getContext(),CreateAd.class);
-            startActivity(myIntent);
+            Intent createIntent = new Intent(v.getContext(),CreateAd.class);
+            startActivity(createIntent);
+        });
+
+        btnProducts.setOnClickListener(v -> {
+            Intent productsIntent = new Intent(v.getContext(),Products.class);
+            startActivity(productsIntent);
         });
     }
 }

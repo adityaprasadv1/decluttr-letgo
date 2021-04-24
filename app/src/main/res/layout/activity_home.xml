@@ -7,6 +7,20 @@
     tools:context=".Home">
 
     <Button
+        android:id="@+id/btnProducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Products"
+        android:textColor="#000000"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/btnCreateAd"
+        app:layout_constraintTop_toTopOf="@+id/guideline13"
+        app:strokeWidth="1dp" />
+
+    <Button
         android:id="@+id/btnCreateAd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,6 +28,7 @@
         android:backgroundTint="#FFFFFF"
         android:text="Create Ad"
         android:textColor="#000000"
+        android:textSize="10dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline16"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
         app:layout_constraintTop_toTopOf="@+id/guideline13"
