@@ -106,7 +106,7 @@ public class CreateAd extends AppCompatActivity {
     protected void dialog(){
 Log.i("heki", "hello");
         //Setting message manually and performing action on button click
-        builder.setMessage("Continue to Products page?")
+        builder.setMessage("Continue to create an Ad?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -121,8 +121,8 @@ Log.i("heki", "hello");
                     public void onClick(DialogInterface dialog, int id) {
                         //  Action for 'NO' Button
                         dialog.cancel();
-                        Intent homeIntent = new Intent(CreateAd.this, Home.class);
-                        startActivity(homeIntent);
+//                        Intent homeIntent = new Intent(CreateAd.this, Home.class);
+//                        startActivity(homeIntent);
                     }
                 });
         builder.show();
