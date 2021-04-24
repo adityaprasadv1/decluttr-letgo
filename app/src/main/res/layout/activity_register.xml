@@ -8,8 +8,8 @@ tools:context=".RegisterActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="329dp"
-        android:layout_height="664dp"
+        android:layout_width="336dp"
+        android:layout_height="574dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +45,6 @@ tools:context=".RegisterActivity">
                 android:id="@+id/txtCreateUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20sp"
                 android:ems="10"
                 android:hint="Bruce Wayne"
                 android:inputType="textPersonName" />
@@ -54,7 +53,6 @@ tools:context=".RegisterActivity">
                 android:id="@+id/txtCreateEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20sp"
                 android:ems="10"
                 android:hint="bruce@wayn.com"
                 android:inputType="textEmailAddress" />
