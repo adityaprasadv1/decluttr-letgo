@@ -37,8 +37,8 @@
     </com.smarteist.autoimageslider.SliderView>
 
     <ScrollView
-        android:layout_width="390dp"
-        android:layout_height="420dp"
+        android:layout_width="394dp"
+        android:layout_height="372dp"
         android:paddingRight="5sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
@@ -73,7 +73,7 @@
                     android:id="@+id/txtHomeContent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
+                    android:layout_marginStart="20dp"
                     android:fontFamily="sans-serif-light"
                     android:gravity="center_vertical"
                     android:paddingLeft="10sp"
