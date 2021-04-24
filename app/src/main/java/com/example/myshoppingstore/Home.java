@@ -16,13 +16,13 @@ import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 
-    String url1 = "https://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200-1.png";
-    String url2 = "https://qphs.fs.quoracdn.net/main-qimg-8e203d34a6a56345f86f1a92570557ba.webp";
-    String url3 = "https://bizzbucket.co/wp-content/uploads/2020/08/Life-in-The-Metro-Blog-Title-22.png";
+    String url1 = "https://res.cloudinary.com/rajith/image/upload/v1619300967/banner3_ujinsp.jpg";
+    String url2 = "https://res.cloudinary.com/rajith/image/upload/v1619300967/banner1_vzuxo6.jpg";
+    String url3 = "https://res.cloudinary.com/rajith/image/upload/v1619301896/banner2_sc7trj.jpg";
     Button btnCreateAd, btnProducts,signoutBtn;
     FirebaseAuth mAuth;
     AlertDialog.Builder builder;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,8 +84,8 @@ public class Home extends AppCompatActivity {
         signoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                builder.setTitle( "Signout" )
-                        .setMessage("Do you want to signout?")
+                builder.setTitle( "Logout" )
+                        .setMessage("Do you want to logout?")
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialoginterface, int i) {
                                 dialoginterface.cancel();
@@ -110,8 +110,8 @@ public class Home extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        builder.setTitle( "Signout" )
-                .setMessage("Do you want to signout?")
+        builder.setTitle( "Logout" )
+                .setMessage("Do you want to logout?")
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialoginterface, int i) {
                         dialoginterface.cancel();
