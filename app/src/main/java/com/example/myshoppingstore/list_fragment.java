@@ -33,7 +33,7 @@ public class list_fragment extends Fragment {
         View v = inflater.inflate(R.layout.activity_list_fragment, container,false);
         recyclerView = v.findViewById(R.id.recyclerView);
 
-        query = FirebaseDatabase.getInstance().getReference().child("CreateAd");
+        query = FirebaseDatabase.getInstance().getReference().child("Products");
         FirebaseRecyclerOptions<CreateForm> options = new FirebaseRecyclerOptions.Builder<CreateForm>().setQuery(query, CreateForm.class).build();
 
         adapter = new ProductAdapter(options);
