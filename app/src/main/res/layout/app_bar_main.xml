@@ -23,17 +23,6 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/addBtn"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:gravity="center|right"
-                android:textSize="14sp"
-                android:textStyle="normal|bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
                 android:id="@+id/signoutButton"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
@@ -50,19 +39,35 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <Button
+                android:id="@+id/btnCreateAd"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center|left"
+                android:text="Create AD"
+                android:textAllCaps="false"
+                android:textColor="#FAFAFA"
+                android:textSize="14sp"
+                android:textStyle="normal|bold"
+                app:iconTint="#63020B"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="cursive"
                 android:gravity="center"
-                android:text="Med Care"
-                android:textColor="#FFFFFF"
+                android:text="Decluttr"
                 android:textAlignment="center"
+                android:textColor="#FFFFFF"
                 android:textSize="30sp"
                 android:textStyle="normal|bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/addBtn"
+                app:layout_constraintEnd_toStartOf="@+id/btnCreateAd"
                 app:layout_constraintStart_toEndOf="@+id/signoutButton"
                 app:layout_constraintTop_toTopOf="parent" />
 
