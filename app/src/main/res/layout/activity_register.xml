@@ -72,6 +72,7 @@ tools:context=".RegisterActivity">
                 android:id="@+id/btnCreateRegister"
                 android:layout_width="206dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#fb641b"
                 android:text="REGISTER" />
 
             <Button
