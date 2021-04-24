@@ -61,6 +61,7 @@
                 android:id="@+id/txtPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword" />
