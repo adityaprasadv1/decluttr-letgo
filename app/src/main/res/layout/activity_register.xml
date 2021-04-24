@@ -6,70 +6,93 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".RegisterActivity">
 
-<androidx.cardview.widget.CardView
-    android:id="@+id/cardView2"
-    android:layout_width="320dp"
-    android:layout_height="530dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="329dp"
+        android:layout_height="664dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/txtCreateUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:ems="10"
-            android:hint="Bruce Wayne"
-            android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="Looks like you're new here!"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/txtCreateEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:ems="10"
-            android:hint="bruce@wayn.com"
-            android:inputType="textEmailAddress" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                app:srcCompat="@drawable/login_img_c4a81e" />
 
-        <EditText
-            android:id="@+id/txtCreatePassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:ems="10"
-            android:hint="9PWEpd%7VA$DN2"
-            android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/txtCreateUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:ems="10"
+                android:hint="Bruce Wayne"
+                android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/btnCreateRegister"
-            android:layout_width="206dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:text="REGISTER" />
+            <EditText
+                android:id="@+id/txtCreateEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:ems="10"
+                android:hint="bruce@wayn.com"
+                android:inputType="textEmailAddress" />
 
-        <Button
-            android:id="@+id/btnCreateLogin"
-            android:layout_width="204dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:text="Login" />
+            <EditText
+                android:id="@+id/txtCreatePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20sp"
+                android:ems="10"
+                android:hint="9PWEpd%7VA$DN2"
+                android:inputType="textPassword" />
 
-        <ProgressBar
-            android:id="@+id/createProgressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible" />
+            <Button
+                android:id="@+id/btnCreateRegister"
+                android:layout_width="206dp"
+                android:layout_height="wrap_content"
+                android:text="REGISTER" />
 
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/btnCreateLogin"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp"
+                android:text="Existing User? Log in"
+                android:textColor="#2874f0"
+                app:iconTint="#ffffff" />
+
+
+            <ProgressBar
+                android:id="@+id/createProgressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
