@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Home extends AppCompatActivity {
 
     String url1 = "https://res.cloudinary.com/rajith/image/upload/v1619300967/banner3_ujinsp.jpg";
-    String url2 = "https://res.cloudinary.com/rajith/image/upload/v1619300967/banner1_vzuxo6.jpg";
+    String url2 = "https://res.cloudinary.com/rajith/image/upload/v1619303634/banner1_xnipmz.jpg";
     String url3 = "https://res.cloudinary.com/rajith/image/upload/v1619301896/banner2_sc7trj.jpg";
     Button btnCreateAd, btnProducts,signoutBtn;
     FirebaseAuth mAuth;
