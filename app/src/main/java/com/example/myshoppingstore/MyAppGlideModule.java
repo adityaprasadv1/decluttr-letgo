@@ -10,7 +10,7 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.InputStream;
 
-public class MyGlideAppModule extends AppGlideModule {
+public class MyAppGlideModule extends AppGlideModule {
     public void registerComponents(Context context, Glide glide, Registry registry){
         registry.append(StorageReference.class, InputStream.class,new FirebaseImageLoader.Factory());
     }
