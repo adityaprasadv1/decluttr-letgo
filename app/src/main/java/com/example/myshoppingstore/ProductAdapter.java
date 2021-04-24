@@ -17,7 +17,6 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-
 public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductAdapter.ProductHolder> {
     public ProductAdapter(FirebaseRecyclerOptions<CreateForm> options){
         super(options);
@@ -30,7 +29,7 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductA
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull ProductAdapter.ProductHolder holder, int position,                                      CreateForm model) {
+    protected void onBindViewHolder(@NonNull ProductAdapter.ProductHolder holder, int position, CreateForm model) {
         StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(model.getImage());
         Glide.with(holder.productImage.getContext()).load(storeRef).into(holder.productImage);
         holder.productName.setText(model.getName());
