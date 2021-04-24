@@ -119,8 +119,8 @@ public class CreateAd extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         //  Action for 'NO' Button
                         dialog.cancel();
-                        Intent productsIntent = new Intent(CreateAd.this, Products.class);
-                        startActivity(productsIntent);
+                        Intent homeIntent = new Intent(CreateAd.this, Home.class);
+                        startActivity(homeIntent);
                     }
                 });
         //Creating dialog box
