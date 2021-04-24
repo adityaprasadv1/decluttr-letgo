@@ -30,10 +30,10 @@ public class list_fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.activity_list_fragment,container,false);
+        View v = inflater.inflate(R.layout.activity_list_fragment, container,false);
         recyclerView = v.findViewById(R.id.recyclerView);
 
-        query = FirebaseDatabase.getInstance().getReference().child("Book");
+        query = FirebaseDatabase.getInstance().getReference().child("CreateAd");
         FirebaseRecyclerOptions<CreateForm> options = new FirebaseRecyclerOptions.Builder<CreateForm>().setQuery(query, CreateForm.class).build();
 
         adapter = new ProductAdapter(options);
@@ -42,11 +42,11 @@ public class list_fragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
 
         Intent intent = getActivity().getIntent();
-    if(intent.getStringExtra("AD")!=null) {
-    String toastString = intent.getStringExtra("AD").toString();
-    builder = new AlertDialog.Builder(getContext());
-    Toast.makeText(getContext(), toastString, Toast.LENGTH_SHORT).show();
-    }
+        if(intent.getStringExtra("AD")!=null) {
+            String toastString   = intent.getStringExtra("AD").toString();
+            builder = new AlertDialog.Builder(getContext());
+            Toast.makeText(getContext(), toastString, Toast.LENGTH_SHORT).show();
+        }
         return v;
     }
 
