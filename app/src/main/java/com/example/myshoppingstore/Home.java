@@ -21,7 +21,8 @@ public class Home extends AppCompatActivity {
     String url3 = "https://bizzbucket.co/wp-content/uploads/2020/08/Life-in-The-Metro-Blog-Title-22.png";
     Button btnCreateAd, btnProducts,signoutBtn;
     FirebaseAuth mAuth;
-
+    AlertDialog.Builder builder;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class Home extends AppCompatActivity {
         signoutBtn = findViewById(R.id.signoutButton);
         mAuth = FirebaseAuth.getInstance();
 
-        AlertDialog.Builder builder;
+
         builder = new AlertDialog.Builder(this);
 
         // we are creating array list for storing our image urls.
@@ -105,6 +106,30 @@ public class Home extends AppCompatActivity {
                         }).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        builder.setTitle( "Signout" )
+                .setMessage("Do you want to signout?")
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialoginterface, int i) {
+                        dialoginterface.cancel();
+                    }})
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialoginterface, int i) {
+
+                        dialoginterface.dismiss();
+                        mAuth = FirebaseAuth.getInstance();
+                        mAuth.signOut();
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                | Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                }).show();
     }
 
 }

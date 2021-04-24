@@ -66,10 +66,8 @@ public class CreateAd extends AppCompatActivity {
             i.setPrice(price);
             btnCreate.setOnClickListener(c -> {
                 FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
-                Toast.makeText(CreateAd.this, "Ad Created", Toast.LENGTH_LONG).show();
-//                dialog();
-                Intent productIntent = new Intent(CreateAd.this,Products.class);
-                startActivity(productIntent);
+                dialog();
+
             });
         }
     }
@@ -87,6 +85,7 @@ public class CreateAd extends AppCompatActivity {
         txtDescription=findViewById(R.id.txtDescription);
         txtPrice=findViewById(R.id.txtPrice);
         btnCreate = findViewById(R.id.btnCreate);
+        builder = new AlertDialog.Builder(this);
 
         btnCam.setOnClickListener(v ->{
 
@@ -104,30 +103,30 @@ public class CreateAd extends AppCompatActivity {
         });
     }
 
-//    protected void dialog(){
-//
-//        //Setting message manually and performing action on button click
-//        builder.setMessage("Continue to Products page?")
-//                .setCancelable(false)
-//                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        finish();
-//                        Intent productIntent = new Intent(CreateAd.this,Products.class);
-//                        startActivity(productIntent);
-//                    }
-//                })
-//                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        //  Action for 'NO' Button
-//                        dialog.cancel();
-//                        Intent homeIntent = new Intent(CreateAd.this, Home.class);
-//                        startActivity(homeIntent);
-//                    }
-//                });
-//        //Creating dialog box
-//        AlertDialog alert = builder.create();
-//        //Setting the title manually
-//        alert.setTitle("Ad created successfully!");
-//        alert.show();
-//    }
+    protected void dialog(){
+Log.i("heki", "hello");
+        //Setting message manually and performing action on button click
+        builder.setMessage("Continue to Products page?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent productIntent = new Intent(CreateAd.this,Products.class);
+                        productIntent.putExtra("AD","Product Created Successfully");
+                        startActivity(productIntent);
+                        finish();
+
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+                        Intent homeIntent = new Intent(CreateAd.this, Home.class);
+                        startActivity(homeIntent);
+                    }
+                });
+        builder.show();
+        //Creating dialog box
+
+    }
 }
