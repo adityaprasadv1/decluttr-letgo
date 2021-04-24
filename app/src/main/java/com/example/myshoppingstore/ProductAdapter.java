@@ -41,13 +41,14 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductA
         ImageView productImage;
         TextView productName, productPrice;
 
-        public ProductHolder(LayoutInflater inflater,ViewGroup parent){
+        public ProductHolder(LayoutInflater inflater, ViewGroup parent){
             super(inflater.inflate(R.layout.row_layout, parent, false));
             productImage = itemView.findViewById(R.id.imgProductImage);
             productName = itemView.findViewById(R.id.txtProductName);
             productPrice = itemView.findViewById(R.id.txtProductPrice);
             itemView.setOnClickListener(this); // Making each item in the Products page clickable
         }
+
         @Override
         public void onClick(View v) {
             CreateForm myCreateAd = getItem(getLayoutPosition());
@@ -60,10 +61,10 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductA
             Intent detailsIntent = new Intent(v.getContext(), Details.class);
 
             // Passing data to next activity through putExtra()
-            detailsIntent.putExtra("productImage",productImage);
-            detailsIntent.putExtra("productName",productName);
-            detailsIntent.putExtra("productPrice",productPrice);
-            detailsIntent.putExtra("productDescription",productDescription);
+            detailsIntent.putExtra("productImage", productImage);
+            detailsIntent.putExtra("productName", productName);
+            detailsIntent.putExtra("productPrice", productPrice);
+            detailsIntent.putExtra("productDescription", productDescription);
             v.getContext().startActivity(detailsIntent);
         }
 
