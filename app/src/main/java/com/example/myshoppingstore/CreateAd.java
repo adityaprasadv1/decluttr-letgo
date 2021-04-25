@@ -65,8 +65,24 @@ public class CreateAd extends AppCompatActivity {
             i.setDescription(description);
             i.setPrice(price);
             btnCreate.setOnClickListener(c -> {
-                FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
-                dialog();
+                if(txtName.getText().toString().isEmpty()){
+                    txtName.setError("Please enter Product Name");
+                }
+                else if(txtDescription.getText().toString().isEmpty()){
+                    txtDescription.setError("Please enter Product Description");
+                }
+                else if(txtPrice.getText().toString().isEmpty()){
+                    txtPrice.setError("Please enter Product Price");
+                }
+                else {
+                    FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
+                    //Toast.makeText(CreateAd.this, "Ad Created", Toast.LENGTH_LONG).show();
+                    //dialog();
+                    Intent productIntent = new Intent(CreateAd.this, Products.class);
+                    startActivity(productIntent);
+                    //dialog();
+                }
+
 
             });
         }
@@ -90,8 +106,19 @@ public class CreateAd extends AppCompatActivity {
         btnCam.setOnClickListener(v ->{
 
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
-                Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(i, 1);
+                if(txtName.getText().toString().isEmpty()){
+                    txtName.setError("Please enter Product Name");
+                }
+                else if(txtDescription.getText().toString().isEmpty()){
+                    txtDescription.setError("Please enter Product Description");
+                }
+                else if(txtPrice.getText().toString().isEmpty()){
+                    txtPrice.setError("Please enter Product Price");
+                }
+                else {
+                    Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(i, 1);
+                }
             }
 
             else if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
