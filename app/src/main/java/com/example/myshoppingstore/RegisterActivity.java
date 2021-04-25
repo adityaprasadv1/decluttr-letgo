@@ -123,4 +123,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     }
                 });
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity(); // or finish();
+    }
 }
