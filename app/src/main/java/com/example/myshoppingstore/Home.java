@@ -30,7 +30,7 @@ public class Home extends AppCompatActivity {
 
         btnCreateAd = findViewById(R.id.btnCreateAd);
         btnProducts = findViewById(R.id.btnProducts);
-        signoutBtn = findViewById(R.id.signoutButton);
+        signoutBtn = findViewById(R.id.signoutButton1);
         mAuth = FirebaseAuth.getInstance();
 
 

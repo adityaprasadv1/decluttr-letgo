@@ -109,6 +109,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 .setValue(user).addOnCompleteListener(task1 -> {
                                     if (task1.isSuccessful()) {
                                         Toast.makeText(RegisterActivity.this, "User registered successfully!", Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent(this, Home.class);
+                                        startActivity(intent);
+                                        finish();
                                     } else {
                                         Toast.makeText(RegisterActivity.this, "User failed to register!", Toast.LENGTH_LONG).show();
                                     }

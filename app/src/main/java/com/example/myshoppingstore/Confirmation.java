@@ -25,10 +25,12 @@ public class Confirmation extends AppCompatActivity {
 
         Button btnContinueShopping;
         btnContinueShopping = findViewById(R.id.btnContinueShopping);
-        btnContinueShopping.setOnClickListener(v -> { //moving to home page when the user clicks on "Need more coffee?" button
-            Intent continueIntent = new Intent(Confirmation.this, Details.class);
-            startActivity(continueIntent);
-            finish(); //stopping user from going back to confirmation page after clicking "Need more coffee?" button by closing/finishing this activity
+        btnContinueShopping.setOnClickListener(v-> {
+            Intent launchNextActivity =new Intent(v.getContext(), Home.class);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(launchNextActivity);
         });
     }
 }

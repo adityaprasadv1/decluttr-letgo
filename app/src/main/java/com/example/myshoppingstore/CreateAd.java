@@ -13,10 +13,11 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -37,7 +38,8 @@ public class CreateAd extends AppCompatActivity {
     String description;
     double price;
     String stringPrice;
-
+    Button  signoutBtn;
+    FirebaseAuth mAuth;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -128,6 +130,38 @@ public class CreateAd extends AppCompatActivity {
                 },200);
             }
         });
+
+        signoutBtn = findViewById(R.id.signoutButton1);
+        mAuth = FirebaseAuth.getInstance();
+
+        builder = new AlertDialog.Builder(this);
+
+
+        signoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                builder.setTitle( "Logout" )
+                        .setMessage("Do you want to logout?")
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialoginterface, int i) {
+                                dialoginterface.cancel();
+                            }})
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialoginterface, int i) {
+
+                                dialoginterface.dismiss();
+                                mAuth = FirebaseAuth.getInstance();
+                                mAuth.signOut();
+                                Intent intent = new Intent(getApplicationContext(), Login.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+                                        | Intent.FLAG_ACTIVITY_CLEAR_TOP
+                                        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                                finish();
+                            }
+                        }).show();
+            }
+        });
     }
 
     protected void dialog(){
@@ -154,6 +188,8 @@ Log.i("heki", "hello");
                 });
         builder.show();
         //Creating dialog box
+
+
 
     }
 }

@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Products">
-
+    <include
+        android:id="@+id/include"
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="0dp" />
     <FrameLayout
         android:id="@+id/fragmentHolder"
         android:layout_width="344dp"
