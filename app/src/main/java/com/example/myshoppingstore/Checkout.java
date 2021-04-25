@@ -13,13 +13,18 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.security.acl.Group;
 
 public class Checkout extends AppCompatActivity {
-
+    private FirebaseUser mAuth;
     Button cancelButton, buy;
     ImageView back;
     TextView nameTextview, priceTextView;
@@ -137,20 +142,45 @@ public class Checkout extends AppCompatActivity {
                     cvvEditText.requestFocus();
                     cvvEditText.setError("Please enter cvv number");
                 }else{
+                    mAuth = FirebaseAuth.getInstance().getCurrentUser();
+                    String emailId = mAuth.getEmail();
+                    sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","message");
+
                     Intent inte = new Intent(v.getContext(), Confirmation.class);
                     v.getContext().startActivity(inte);
                     finish();
                 }
             }
             else{
+                mAuth = FirebaseAuth.getInstance().getCurrentUser();
+                  String emailId = mAuth.getEmail();
+                sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","message");
+
+
                 Intent inte = new Intent(v.getContext(), Confirmation.class);
                 v.getContext().startActivity(inte);
                 finish();
             }
 //
         });
-
-
-
     }
+
+    private void sendEmail(final String Sender,final String Password,final String Receiver,final String Title,final String Message)
+    {
+
+        new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    GMailSender sender = new GMailSender(Sender,Password);
+                    sender.sendMail(Title, "<b>"+Message+"</b>", Sender, Receiver);
+                } catch (Exception e) {
+                    Log.e("SendMail", e.getMessage(), e);
+                }
+            }
+
+        }).start();
+    }
+
 }

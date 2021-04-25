@@ -133,7 +133,6 @@ public class CreateAd extends AppCompatActivity {
 
         signoutBtn = findViewById(R.id.signoutButton1);
         mAuth = FirebaseAuth.getInstance();
-
         builder = new AlertDialog.Builder(this);
 
 
