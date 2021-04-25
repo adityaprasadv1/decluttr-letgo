@@ -16,6 +16,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".Home" />
         <activity android:name=".Products" />
+        <activity android:name=".Details" />
+        <activity android:name=".Checkout" />
+        <activity android:name=".Confirmation" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

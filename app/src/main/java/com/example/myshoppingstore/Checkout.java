@@ -26,7 +26,6 @@ public class Checkout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); //starting from where it stopped
         setContentView(R.layout.checkout_form); //setting appropriate layout when the activity is loaded
-        getSupportActionBar().hide(); //hiding the top action bar in the app
 
         //getting intent from previous activity to collect data passed from it
         Intent checkoutIntent = getIntent();
