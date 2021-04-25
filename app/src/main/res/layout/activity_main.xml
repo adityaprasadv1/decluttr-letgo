@@ -13,7 +13,7 @@
         android:layout_marginBottom="20dp"
         android:text="All Rights Reserved. \u00a9 Decluttr Letgo 2021."
         android:textColor="#2D2F31"
-        android:textSize="8dp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -26,5 +26,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.536"
         app:srcCompat="@drawable/decluttrlogo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

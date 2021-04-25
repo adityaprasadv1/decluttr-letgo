@@ -5,11 +5,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
@@ -22,7 +34,10 @@ public class Home extends AppCompatActivity {
     Button btnCreateAd, btnProducts,signoutBtn;
     FirebaseAuth mAuth;
     AlertDialog.Builder builder;
-
+    ImageView cardImage1, cardImage2, cardImage3, cardImage4;
+    TextView textView1, textView2, textView3, textView4;
+    DatabaseReference ref1, ref2, ref3, ref4;
+    private CardView cardView1, cardView2, cardView3, cardView4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +121,170 @@ public class Home extends AppCompatActivity {
                         }).show();
             }
         });
+
+
+//       Card images from firebase
+        cardImage1= findViewById(R.id.cardImg1);
+        cardView1 = findViewById(R.id.card1);
+        cardImage2 = findViewById(R.id.cardImg2);
+        cardView2 = findViewById(R.id.card2);
+        cardImage3 = findViewById(R.id.cardImg3);
+        cardView3 = findViewById(R.id.card3);
+        cardImage4 = findViewById(R.id.cardImg4);
+        cardView4 = findViewById(R.id.card4);
+
+        ref1 = FirebaseDatabase.getInstance().getReference().child("Products").child("-MZ5HhbfeoHTRgF6sFZu");
+        ref1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String nameText = snapshot.child("name").getValue().toString();
+                String price = snapshot.child("price").getValue().toString();
+                String description = snapshot.child("description").getValue().toString();
+                String condition = snapshot.child("condition").getValue().toString();
+//
+//                storing image url to a string
+                String image = snapshot.child("image").getValue().toString();
+                StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
+
+                Glide.with(cardImage1.getContext())
+                        .load(storeRef)
+                        .into(cardImage1);
+
+                cardView1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(v.getContext(), Details.class);
+                        i.putExtra("productName",nameText );
+                        i.putExtra("productDescription",description );
+                        i.putExtra("productImage",image );
+                        i.putExtra("productPrice",price );
+                        i.putExtra("productCondition",condition );
+                        v.getContext().startActivity(i);
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        ref2 = FirebaseDatabase.getInstance().getReference().child("Products").child("-MZ5bQDVP0KiRiFHZ8_c");
+        ref2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String nameText = snapshot.child("name").getValue().toString();
+                String price = snapshot.child("price").getValue().toString();
+                String description = snapshot.child("description").getValue().toString();
+                String condition = snapshot.child("condition").getValue().toString();
+//
+//                storing image url to a string
+                String image = snapshot.child("image").getValue().toString();
+                StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
+
+                Glide.with(cardImage2.getContext())
+                        .load(storeRef)
+                        .into(cardImage2);
+
+                cardView2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(v.getContext(), Details.class);
+                        i.putExtra("productName",nameText );
+                        i.putExtra("productDescription",description );
+                        i.putExtra("productImage",image );
+                        i.putExtra("productPrice",price );
+                        i.putExtra("productCondition",condition );
+                        v.getContext().startActivity(i);
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+        ref3 = FirebaseDatabase.getInstance().getReference().child("Products").child("-MZ5fcABkP9n3plRPEh6");
+        ref3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String nameText = snapshot.child("name").getValue().toString();
+                String price = snapshot.child("price").getValue().toString();
+                String description = snapshot.child("description").getValue().toString();
+                String condition = snapshot.child("condition").getValue().toString();
+//                storing image url to a string
+                String image = snapshot.child("image").getValue().toString();
+                StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
+
+                Glide.with(cardImage3.getContext())
+                        .load(storeRef)
+                        .into(cardImage3);
+
+                cardView3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(v.getContext(), Details.class);
+                        i.putExtra("productName",nameText );
+                        i.putExtra("productDescription",description );
+                        i.putExtra("productImage",image );
+                        i.putExtra("productPrice",price );
+                        i.putExtra("productCondition",condition );
+                        v.getContext().startActivity(i);
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        ref4 = FirebaseDatabase.getInstance().getReference().child("Products").child("-MZ8KVndoPCPwyKLs5J9");
+        ref4.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String nameText = snapshot.child("name").getValue().toString();
+                String price = snapshot.child("price").getValue().toString();
+                String description = snapshot.child("description").getValue().toString();
+                String condition = snapshot.child("condition").getValue().toString();
+//                storing image url to a string
+                String image = snapshot.child("image").getValue().toString();
+                StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
+
+                Glide.with(cardImage4.getContext())
+                        .load(storeRef)
+                        .into(cardImage4);
+
+                cardView4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent i = new Intent(v.getContext(), Details.class);
+                        i.putExtra("productName",nameText );
+                        i.putExtra("productDescription",description );
+                        i.putExtra("productImage",image );
+                        i.putExtra("productPrice",price );
+                        i.putExtra("productCondition",condition );
+                        v.getContext().startActivity(i);
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
     }
 
     @Override

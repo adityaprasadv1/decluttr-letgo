@@ -37,8 +37,8 @@
     </com.smarteist.autoimageslider.SliderView>
 
     <ScrollView
-        android:layout_width="394dp"
-        android:layout_height="372dp"
+        android:layout_width="398dp"
+        android:layout_height="420dp"
         android:paddingRight="5sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toStartOf="@+id/guideline14"
@@ -48,6 +48,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,15 +61,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="28dp"
-                    android:backgroundTint="#FFFFFF"
+                    android:backgroundTint="#2874f0"
                     android:text="View all"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="10dp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:strokeWidth="1dp" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/txtHomeContent"
@@ -81,6 +83,7 @@
                     android:text="Featured"
                     android:textColor="@android:color/black"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/btnProducts" />
@@ -93,16 +96,72 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card1"
                     android:layout_width="158dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
-                    app:cardElevation="3dp" />
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cardImg1"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/bag" />
+
+                        <TextView
+                            android:id="@+id/cardText1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Bag"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card2"
                     android:layout_width="158dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
-                    app:cardElevation="3dp" />
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cardImg2"
+                            android:layout_width="130dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/camera" />
+
+                        <TextView
+                            android:id="@+id/cardText2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Camera"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -112,16 +171,73 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
                     android:layout_width="158dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
-                    app:cardElevation="3dp" />
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cardImg3"
+                            android:layout_width="130dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/guitar" />
+
+                        <TextView
+                            android:id="@+id/cardText3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Guitar"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/card4"
                     android:layout_width="158dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
-                    app:cardElevation="3dp" />
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/cardImg4"
+                            android:layout_width="130dp"
+                            android:layout_height="140dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/shoes" />
+
+                        <TextView
+                            android:id="@+id/cardText4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Shoe"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
         </LinearLayout>
@@ -168,12 +284,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
