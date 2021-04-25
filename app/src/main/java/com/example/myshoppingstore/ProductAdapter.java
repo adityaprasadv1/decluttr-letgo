@@ -9,6 +9,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -33,20 +34,22 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductA
         StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(model.getImage());
         Glide.with(holder.productImage.getContext()).load(storeRef).into(holder.productImage);
         holder.productName.setText(model.getName());
-        holder.productPrice.setText("$"+model.getPrice());
+        holder.productPrice.setText(Double.toString(model.getPrice()));
     }
 
     class ProductHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView productImage;
         TextView productName, productPrice;
+        CardView cardView;
 
         public ProductHolder(LayoutInflater inflater, ViewGroup parent){
             super(inflater.inflate(R.layout.row_layout, parent, false));
             productImage = itemView.findViewById(R.id.imgProductImage);
             productName = itemView.findViewById(R.id.txtProductName);
             productPrice = itemView.findViewById(R.id.txtProductPrice);
-            itemView.setOnClickListener(this); // Making each item in the Products page clickable
+            cardView = itemView.findViewById(R.id.cardViewLayout);
+            cardView.setOnClickListener(this); // Making each item in the Products page clickable
         }
 
         @Override

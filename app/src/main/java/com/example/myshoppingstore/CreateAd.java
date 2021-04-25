@@ -62,7 +62,7 @@ public class CreateAd extends AppCompatActivity {
             description = txtDescription.getText().toString();
             stringPrice = txtPrice.getText().toString();
             price = Double.valueOf(stringPrice);
-            Log.i("name",name);
+//            Log.i("name",name);
             i.setName(name);
             i.setDescription(description);
             i.setPrice(price);
@@ -77,18 +77,17 @@ public class CreateAd extends AppCompatActivity {
                     txtPrice.setError("Please enter Product Price");
                 }
                 else {
-                    FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
+//                    FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
                     //Toast.makeText(CreateAd.this, "Ad Created", Toast.LENGTH_LONG).show();
-                    //dialog();
-                    Intent productIntent = new Intent(CreateAd.this, Products.class);
-                    startActivity(productIntent);
-                    //dialog();
+                    dialog(i);
                 }
 
 
             });
         }
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,32 +162,27 @@ public class CreateAd extends AppCompatActivity {
         });
     }
 
-    protected void dialog(){
-Log.i("heki", "hello");
+    protected void dialog(CreateForm i){
+        Log.i("CreateForm", "" + i);
+
         //Setting message manually and performing action on button click
         builder.setMessage("Continue to create an Ad?")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
                         Intent productIntent = new Intent(CreateAd.this,Products.class);
                         productIntent.putExtra("AD","Product Created Successfully");
                         startActivity(productIntent);
                         finish();
-
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //  Action for 'NO' Button
                         dialog.cancel();
-//                        Intent homeIntent = new Intent(CreateAd.this, Home.class);
-//                        startActivity(homeIntent);
                     }
                 });
         builder.show();
-        //Creating dialog box
-
-
-
     }
 }

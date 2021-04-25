@@ -74,7 +74,7 @@
                         android:layout_gravity="center|right"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Average User Rating"
+                        android:text="Product Condition"
                         android:textColor="#121111" />
 
                     <RatingBar
