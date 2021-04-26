@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -22,6 +23,7 @@ public class Details extends AppCompatActivity {
     private Button btnBuynow;
     private ImageView productImage;
     private TextView productName, productPrice, productDescription;
+    RatingBar productCondtn;
     Button btnCreateAd, btnProducts,signoutBtn;
     FirebaseAuth mAuth;
     AlertDialog.Builder builder;
@@ -34,6 +36,7 @@ public class Details extends AppCompatActivity {
         productImage = findViewById(R.id.productImage);
         productName = findViewById(R.id.productName);
         productPrice = findViewById(R.id.productPrice);
+        productCondtn = findViewById(R.id.productCondition);
         productDescription = findViewById(R.id.productDescription);
 
         Intent productIntent = getIntent();
@@ -42,12 +45,16 @@ public class Details extends AppCompatActivity {
         String productNameFromDB = productIntent.getStringExtra("productName");
         Double productPriceFromDB = productIntent.getDoubleExtra("productPrice", 0.0);
         String productDescriptionFromDB = productIntent.getStringExtra("productDescription");
+        double productConditionFromDB = productIntent.getDoubleExtra("productCondition", 0.0);
+//        double d = model.getCondition();
+        float rating = (float)productConditionFromDB;
 
         StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(productImageFromDB);
         Glide.with(productImage.getContext()).load(storeRef).into(productImage);
         productName.setText(productNameFromDB);
         productPrice.setText("$"+productPriceFromDB);
         productDescription.setText(productDescriptionFromDB);
+        productCondtn.setRating(rating);
 
         btnBuynow = (Button)findViewById(R.id.btnBuynow);
         btnBuynow.setOnClickListener(v -> { //moving into checkout form when user clicks buy now button

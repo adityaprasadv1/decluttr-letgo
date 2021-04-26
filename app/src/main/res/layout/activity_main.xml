@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="All Rights Reserved. \u00a9 Decluttr Letgo 2021."
+        android:text="All Rights Reserved. \u00a9 Decluttr 2021."
         android:textColor="#2D2F31"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"

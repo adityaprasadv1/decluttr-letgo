@@ -139,9 +139,10 @@ public class Home extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String nameText = snapshot.child("name").getValue().toString();
                 String price = snapshot.child("price").getValue().toString();
+                double dPrice = Double.parseDouble(price);
                 String description = snapshot.child("description").getValue().toString();
                 String condition = snapshot.child("condition").getValue().toString();
-//
+                double dCondition = Double.parseDouble(condition);
 //                storing image url to a string
                 String image = snapshot.child("image").getValue().toString();
                 StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
@@ -157,8 +158,8 @@ public class Home extends AppCompatActivity {
                         i.putExtra("productName",nameText );
                         i.putExtra("productDescription",description );
                         i.putExtra("productImage",image );
-                        i.putExtra("productPrice",price );
-                        i.putExtra("productCondition",condition );
+                        i.putExtra("productPrice",dPrice );
+                        i.putExtra("productCondition",dCondition );
                         v.getContext().startActivity(i);
                     }
                 });
@@ -177,9 +178,10 @@ public class Home extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String nameText = snapshot.child("name").getValue().toString();
                 String price = snapshot.child("price").getValue().toString();
+                double dPrice = Double.parseDouble(price);
                 String description = snapshot.child("description").getValue().toString();
                 String condition = snapshot.child("condition").getValue().toString();
-//
+                double dCondition = Double.parseDouble(condition);
 //                storing image url to a string
                 String image = snapshot.child("image").getValue().toString();
                 StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
@@ -195,8 +197,8 @@ public class Home extends AppCompatActivity {
                         i.putExtra("productName",nameText );
                         i.putExtra("productDescription",description );
                         i.putExtra("productImage",image );
-                        i.putExtra("productPrice",price );
-                        i.putExtra("productCondition",condition );
+                        i.putExtra("productPrice",dPrice );
+                        i.putExtra("productCondition",dCondition );
                         v.getContext().startActivity(i);
                     }
                 });
@@ -216,8 +218,10 @@ public class Home extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String nameText = snapshot.child("name").getValue().toString();
                 String price = snapshot.child("price").getValue().toString();
+                double dPrice = Double.parseDouble(price);
                 String description = snapshot.child("description").getValue().toString();
                 String condition = snapshot.child("condition").getValue().toString();
+                double dCondition = Double.parseDouble(condition);
 //                storing image url to a string
                 String image = snapshot.child("image").getValue().toString();
                 StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
@@ -233,8 +237,8 @@ public class Home extends AppCompatActivity {
                         i.putExtra("productName",nameText );
                         i.putExtra("productDescription",description );
                         i.putExtra("productImage",image );
-                        i.putExtra("productPrice",price );
-                        i.putExtra("productCondition",condition );
+                        i.putExtra("productPrice",dPrice );
+                        i.putExtra("productCondition",dCondition );
                         v.getContext().startActivity(i);
                     }
                 });
@@ -253,8 +257,10 @@ public class Home extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String nameText = snapshot.child("name").getValue().toString();
                 String price = snapshot.child("price").getValue().toString();
+                double dPrice = Double.parseDouble(price);
                 String description = snapshot.child("description").getValue().toString();
                 String condition = snapshot.child("condition").getValue().toString();
+                double dCondition = Double.parseDouble(condition);
 //                storing image url to a string
                 String image = snapshot.child("image").getValue().toString();
                 StorageReference storeRef = FirebaseStorage.getInstance().getReferenceFromUrl(image);
@@ -270,8 +276,8 @@ public class Home extends AppCompatActivity {
                         i.putExtra("productName",nameText );
                         i.putExtra("productDescription",description );
                         i.putExtra("productImage",image );
-                        i.putExtra("productPrice",price );
-                        i.putExtra("productCondition",condition );
+                        i.putExtra("productPrice",dPrice );
+                        i.putExtra("productCondition",dCondition );
                         v.getContext().startActivity(i);
                     }
                 });

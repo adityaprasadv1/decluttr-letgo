@@ -148,7 +148,7 @@
                         <ImageView
                             android:id="@+id/cardImg2"
                             android:layout_width="130dp"
-                            android:layout_height="140dp"
+                            android:layout_height="130dp"
                             android:layout_gravity="center"
                             app:srcCompat="@drawable/camera" />
 
@@ -189,7 +189,7 @@
                         <ImageView
                             android:id="@+id/cardImg3"
                             android:layout_width="130dp"
-                            android:layout_height="140dp"
+                            android:layout_height="130dp"
                             android:layout_gravity="center"
                             app:srcCompat="@drawable/guitar" />
 
@@ -223,7 +223,7 @@
                         <ImageView
                             android:id="@+id/cardImg4"
                             android:layout_width="130dp"
-                            android:layout_height="140dp"
+                            android:layout_height="130dp"
                             android:layout_gravity="center"
                             app:srcCompat="@drawable/shoes" />
 
@@ -233,7 +233,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:text="Shoe"
+                            android:text="Shoes"
                             android:textStyle="bold" />
                     </LinearLayout>
 
