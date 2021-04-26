@@ -12,10 +12,11 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="52dp"
         tools:layout_editor_absoluteY="0dp" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="366dp"
-        android:layout_height="605dp"
+        android:layout_width="372dp"
+        android:layout_height="648dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
@@ -95,10 +96,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80sp"
                     android:layout_marginRight="80sp"
-                    android:backgroundTint="#FFFFFF"
-                    android:text="Buy Now"
-                    android:textColor="#000000"
-                    app:strokeWidth="1dp" />
+                    android:backgroundTint="#fb641b"
+                    android:text="Buy Now" />
 
                 <TextView
                     android:id="@+id/productDescription"
@@ -117,13 +116,6 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.02" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -135,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
