@@ -14,40 +14,83 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create an AD"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/guideline34"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
     <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="655dp"
-        android:gravity="center"
+        android:layout_width="406dp"
+        android:layout_height="613dp"
+        android:gravity="center_horizontal|top"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="76dp">
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline17">
 
-        <EditText
-            android:id="@+id/txtName"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Product Name"
-            android:inputType="textPersonName" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/txtDescription"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Description"
-            android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#ffffff"
+                android:ems="10"
+                android:hint="Product Name"
+                android:inputType="textPersonName|textCapSentences" />
 
-        <EditText
-            android:id="@+id/txtPrice"
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Price"
-            android:inputType="number|textPersonName" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#ffffff"
+                android:ems="10"
+                android:hint="Description"
+                android:inputType="textPersonName|textCapSentences" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/txtPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#ffffff"
+                android:ems="10"
+                android:hint="Price"
+                android:inputType="number|textPersonName"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <LinearLayout
             android:layout_width="300dp"
@@ -95,7 +138,22 @@
             android:backgroundTint="#FB641B"
             android:text="Create" />
 
-    </LinearLayout><![CDATA[
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+    <![CDATA[
 
 
 

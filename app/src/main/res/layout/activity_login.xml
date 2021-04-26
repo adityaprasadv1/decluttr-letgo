@@ -46,28 +46,61 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 app:srcCompat="@drawable/login_img_c4a81e" />
 
-            <EditText
-                android:id="@+id/txtEmail"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="bruce@wayne.com"
-                android:inputType="textEmailAddress" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/txtPassword"
+                <EditText
+                    android:id="@+id/txtEmail"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/txtEmail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="bruce@wayne.com"-->
+<!--                android:inputType="textEmailAddress" />-->
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Password"
-                android:inputType="textPassword" />
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtPassword"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/txtPassword"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Password"-->
+<!--                android:inputType="textPassword" />-->
 
             <Button
                 android:id="@+id/btnLogin"
-                android:layout_width="205dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FB641B"
                 android:text="LOGIN" />

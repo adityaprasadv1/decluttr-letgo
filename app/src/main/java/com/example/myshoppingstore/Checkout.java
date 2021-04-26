@@ -3,6 +3,7 @@ package com.example.myshoppingstore;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -98,9 +99,14 @@ public class Checkout extends AppCompatActivity {
 
         RadioGroup  group= findViewById(R.id.radioGroup);
         EditText cardEdittext, expiryEdittext, cvvEditText;
+        View textlayout1, textlayout2, textlayout3;
         cardEdittext = findViewById(R.id.cardNumber);
         expiryEdittext = findViewById(R.id.expiry);
         cvvEditText = findViewById(R.id.cvv);
+        textlayout1 = findViewById(R.id.TextInputLayout1);
+        textlayout2 = findViewById(R.id.TextInputLayout2);
+        textlayout3 = findViewById(R.id.TextInputLayout3);
+
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -109,10 +115,17 @@ public class Checkout extends AppCompatActivity {
                 RadioButton r = (RadioButton) radioGroup.getChildAt(index);
                 selectedtext = r.getText().toString();
                 if(selectedtext.equals("Cash")){
-                    cardEdittext.setVisibility(View.GONE); expiryEdittext.setVisibility(View.GONE); cvvEditText.setVisibility(View.GONE);
+//                    cardEdittext.setVisibility(View.GONE);
+//                    expiryEdittext.setVisibility(View.GONE);
+//                    cvvEditText.setVisibility(View.GONE);
+                    textlayout1.setVisibility(View.GONE);
+                    textlayout2.setVisibility(View.GONE);
+                    textlayout3.setVisibility(View.GONE);
+
                 }else{
-                    cardEdittext.setVisibility(View.VISIBLE); expiryEdittext.setVisibility(View.VISIBLE);
-                    cvvEditText.setVisibility(View.VISIBLE);
+                    textlayout1.setVisibility(View.VISIBLE);
+                    textlayout2.setVisibility(View.VISIBLE);
+                    textlayout3.setVisibility(View.VISIBLE);
 
                 }
             }
@@ -145,7 +158,7 @@ public class Checkout extends AppCompatActivity {
                     cardEdittext.setError("Please enter card number");
                 }else if(expiryEdittext.getText().toString().isEmpty()){
                     expiryEdittext.requestFocus();
-                    expiryEdittext.setError("Please enter address");
+                    expiryEdittext.setError("Please enter expiry date");
                 }else if(cvvEditText.getText().toString().isEmpty()){
                     cvvEditText.requestFocus();
                     cvvEditText.setError("Please enter cvv number");

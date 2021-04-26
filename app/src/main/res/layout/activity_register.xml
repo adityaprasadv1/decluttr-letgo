@@ -38,37 +38,85 @@ tools:context=".RegisterActivity">
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 app:srcCompat="@drawable/login_img_c4a81e" />
 
-            <EditText
-                android:id="@+id/txtCreateUsername"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Bruce Wayne"
-                android:inputType="textPersonName" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/txtCreateEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="bruce@wayn.com"
-                android:inputType="textEmailAddress" />
+                <EditText
+                    android:id="@+id/txtCreateUsername"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Username"
+                    android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/txtCreatePassword"
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/txtCreateUsername"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Bruce Wayne"-->
+<!--                android:inputType="textPersonName" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10sp"
-                android:ems="10"
-                android:hint="9PWEpd%7VA$DN2"
-                android:inputType="textPassword" />
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtCreateEmail"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/txtCreateEmail"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:hint="bruce@wayn.com"-->
+<!--                android:inputType="textEmailAddress" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txtCreatePassword"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/txtCreatePassword"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="10sp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="9PWEpd%7VA$DN2"-->
+<!--                android:inputType="textPassword" />-->
 
             <Button
                 android:id="@+id/btnCreateRegister"
-                android:layout_width="206dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#fb641b"
                 android:text="REGISTER" />

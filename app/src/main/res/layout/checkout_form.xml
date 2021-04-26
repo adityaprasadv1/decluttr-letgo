@@ -77,33 +77,84 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editTextName"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:ems="10"
-                android:hint="Name"
-                android:inputType="textPersonName" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/editTextMobile"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:ems="10"
-                android:hint="Mobile"
-                android:inputType="phone"
-                android:maxLength="13" />
+                <EditText
+                    android:id="@+id/editTextName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textPersonName|textCapSentences"/>
 
-            <EditText
-                android:id="@+id/editAddress"
+            </com.google.android.material.textfield.TextInputLayout>
+
+<!--            <EditText-->
+<!--                android:id="@+id/editTextName"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Name"-->
+<!--                android:inputType="textPersonName|textCapSentences" />-->
+
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:ems="10"
-                android:hint="Address"
-                android:inputType="text|textPostalAddress" />
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editTextMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Mobile"
+                    android:inputType="phone"
+                    android:maxLength="13" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/editTextMobile"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Mobile"-->
+<!--                android:inputType="phone"-->
+<!--                android:maxLength="13" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Address"
+                    android:inputType="text|textCapSentences|textPostalAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/editAddress"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Address"-->
+<!--                android:inputType="text|textCapSentences|textPostalAddress" />-->
 
             <TextView
                 android:id="@+id/buyMobileText"
@@ -155,35 +206,89 @@
 
             </RadioGroup>
 
-            <EditText
-                android:id="@+id/cardNumber"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout1"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:ems="10"
-                android:hint="Card Number"
-                android:inputType="number"
-                android:maxLength="16" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/expiry"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:ems="10"
-                android:hint="MMYY"
-                android:inputType="number"
-                android:maxLength="4" />
+                <EditText
+                    android:id="@+id/cardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="Card Number"
+                    android:inputType="number"
+                    android:maxLength="16" />
 
-            <EditText
-                android:id="@+id/cvv"
+            </com.google.android.material.textfield.TextInputLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/cardNumber"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="Card Number"-->
+<!--                android:inputType="number"-->
+<!--                android:maxLength="16" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout2"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
-                android:ems="10"
-                android:hint="CVV"
-                android:inputType="number"
-                android:maxLength="3" />
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/expiry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="MMYY"
+                    android:inputType="number"
+                    android:maxLength="4"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/expiry"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="15dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="MMYY"-->
+<!--                android:inputType="number"-->
+<!--                android:maxLength="4" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TextInputLayout3"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/cvv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#ffffff"
+                    android:ems="10"
+                    android:hint="CVV"
+                    android:inputType="number"
+                    android:maxLength="3"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+<!--            <EditText-->
+<!--                android:id="@+id/cvv"-->
+<!--                android:layout_width="300dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="25dp"-->
+<!--                android:ems="10"-->
+<!--                android:hint="CVV"-->
+<!--                android:inputType="number"-->
+<!--                android:maxLength="3" />-->
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
