@@ -160,6 +160,7 @@ public class Home extends AppCompatActivity {
                         i.putExtra("productImage",image );
                         i.putExtra("productPrice",dPrice );
                         i.putExtra("productCondition",dCondition );
+                        i.putExtra("productId","-MZ5HhbfeoHTRgF6sFZu" );
                         v.getContext().startActivity(i);
                     }
                 });
@@ -199,6 +200,7 @@ public class Home extends AppCompatActivity {
                         i.putExtra("productImage",image );
                         i.putExtra("productPrice",dPrice );
                         i.putExtra("productCondition",dCondition );
+                        i.putExtra("productId","-MZ5bQDVP0KiRiFHZ8_c" );
                         v.getContext().startActivity(i);
                     }
                 });
@@ -239,6 +241,7 @@ public class Home extends AppCompatActivity {
                         i.putExtra("productImage",image );
                         i.putExtra("productPrice",dPrice );
                         i.putExtra("productCondition",dCondition );
+                        i.putExtra("productId","-MZ5fcABkP9n3plRPEh6" );
                         v.getContext().startActivity(i);
                     }
                 });
@@ -278,6 +281,7 @@ public class Home extends AppCompatActivity {
                         i.putExtra("productImage",image );
                         i.putExtra("productPrice",dPrice );
                         i.putExtra("productCondition",dCondition );
+                        i.putExtra("productId","-MZ8KVndoPCPwyKLs5J9" );
                         v.getContext().startActivity(i);
                     }
                 });

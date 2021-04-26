@@ -33,4 +33,13 @@ public class Confirmation extends AppCompatActivity {
             startActivity(launchNextActivity);
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent launchNextActivity =new Intent(getApplicationContext(), Home.class);
+        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(launchNextActivity);
+    }
 }

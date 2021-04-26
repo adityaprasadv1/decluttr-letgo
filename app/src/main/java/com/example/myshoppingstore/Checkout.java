@@ -19,7 +19,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.security.acl.Group;
 
@@ -29,6 +34,8 @@ public class Checkout extends AppCompatActivity {
     ImageView back;
     TextView nameTextview, priceTextView;
     String selectedtext;
+    private Query query;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +52,7 @@ public class Checkout extends AppCompatActivity {
 
         Intent detailsIntent = getIntent();
         String name = detailsIntent.getStringExtra("productName");
+        String productId = detailsIntent.getStringExtra("productId");
         Double price = detailsIntent.getDoubleExtra("productPrice", 0);
         Log.i("price", ""+ price);
 //        String brand = i.getStringExtra("brand");
@@ -146,6 +154,12 @@ public class Checkout extends AppCompatActivity {
                     String emailId = mAuth.getEmail();
                     sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear " + editName.getText().toString()+", <br> <br>Thank you for buying <b>"+name+"</b> from Decluttr! You have spent <b>$"+price+"</b> for the purchase. Hope you loved the purchase!<br><br>Keep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon. <br> <br>- Team Decluttr, <br>Region of Waterloo.");
 
+if(!productId.equals("-MZ5HhbfeoHTRgF6sFZu") && !productId.equals("-MZ5bQDVP0KiRiFHZ8_c")&& !productId.equals("-MZ5fcABkP9n3plRPEh6")&& !productId.equals("-MZ8KVndoPCPwyKLs5J9")) {
+    DatabaseReference mPostReference = FirebaseDatabase.getInstance().getReference()
+            .child("Products").child(productId);
+    mPostReference.removeValue();
+}
+
                     Intent confirmationIntent = new Intent(v.getContext(), Confirmation.class);
                     confirmationIntent.putExtra("productName",name);
                     v.getContext().startActivity(confirmationIntent);
@@ -157,6 +171,11 @@ public class Checkout extends AppCompatActivity {
                   String emailId = mAuth.getEmail();
                 sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear " + editName.getText().toString()+", <br> <br>Thank you for buying <b>"+name+"</b> from Decluttr! You have spent <b>$"+price+"</b> for the purchase. Hope you loved the purchase!<br><br>Keep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon. <br> <br>- Team Decluttr, <br>Region of Waterloo.");
 
+                if(!productId.equals("-MZ5HhbfeoHTRgF6sFZu") && !productId.equals("-MZ5bQDVP0KiRiFHZ8_c")&& !productId.equals("-MZ5fcABkP9n3plRPEh6")&& !productId.equals("-MZ8KVndoPCPwyKLs5J9")) {
+                    DatabaseReference mPostReference = FirebaseDatabase.getInstance().getReference()
+                            .child("Products").child(productId);
+                    mPostReference.removeValue();
+                }
 
                 Intent confirmationIntent = new Intent(v.getContext(), Confirmation.class);
                 confirmationIntent.putExtra("productName",name);

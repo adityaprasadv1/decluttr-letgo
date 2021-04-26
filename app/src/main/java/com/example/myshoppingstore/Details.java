@@ -45,6 +45,7 @@ public class Details extends AppCompatActivity {
         String productNameFromDB = productIntent.getStringExtra("productName");
         Double productPriceFromDB = productIntent.getDoubleExtra("productPrice", 0.0);
         String productDescriptionFromDB = productIntent.getStringExtra("productDescription");
+        String productId = productIntent.getStringExtra("productId");
         double productConditionFromDB = productIntent.getDoubleExtra("productCondition", 0.0);
 //        double d = model.getCondition();
         float rating = (float)productConditionFromDB;
@@ -63,6 +64,7 @@ public class Details extends AppCompatActivity {
             //passing product name, price which came from DB to checkout form to show the purchase details
             checkoutIntent.putExtra("productName",productNameFromDB);
             checkoutIntent.putExtra("productPrice",productPriceFromDB);
+            checkoutIntent.putExtra("productId",productId);
             startActivity(checkoutIntent);
         });
 

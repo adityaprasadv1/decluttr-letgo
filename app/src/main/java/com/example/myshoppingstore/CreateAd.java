@@ -22,6 +22,7 @@ import android.widget.Spinner;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -83,7 +84,7 @@ public class CreateAd extends AppCompatActivity {
             i.setDescription(description);
             i.setPrice(price);
             i.setCondition(con);
-            Log.i("stringCondition", "" + con);
+
             btnCreate.setOnClickListener(c -> {
                 if(txtName.getText().toString().isEmpty()){
                     txtName.setError("Please enter Product Name");
@@ -95,8 +96,6 @@ public class CreateAd extends AppCompatActivity {
                     txtPrice.setError("Please enter Product Price");
                 }
                 else {
-//                    FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
-                    //Toast.makeText(CreateAd.this, "Ad Created", Toast.LENGTH_LONG).show();
                     dialog(i);
                 }
 
@@ -182,13 +181,13 @@ public class CreateAd extends AppCompatActivity {
 
         //get the spinner from the xml.
         Spinner dropdown = findViewById(R.id.spinner1);
-//create a list of items for the spinner.
-        Double[] items = new Double[]{0.5,1.0,1.5,2.0, 2.5,3.0,3.5,4.0,4.5,5.0 };
-//create an adapter to describe how the items are displayed, adapters are used in several places in android.
-//There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<Double> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-//set the spinners adapter to the previously created one.
-        dropdown.setAdapter(adapter);
+        //create a list of items for the spinner.
+                Double[] items = new Double[]{0.5,1.0,1.5,2.0, 2.5,3.0,3.5,4.0,4.5,5.0 };
+        //create an adapter to describe how the items are displayed, adapters are used in several places in android.
+        //There are multiple variations of this, but this is the basic variant.
+                ArrayAdapter<Double> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        //set the spinners adapter to the previously created one.
+                dropdown.setAdapter(adapter);
     }
 
     protected void dialog(CreateForm i){
@@ -199,7 +198,10 @@ public class CreateAd extends AppCompatActivity {
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        FirebaseDatabase.getInstance().getReference().child("Products").push().setValue(i);
+                        String mGroupId =   FirebaseDatabase.getInstance().getReference().child("Products").push().getKey();
+                        i.setId(mGroupId);
+                        FirebaseDatabase.getInstance().getReference().child("Products").child(mGroupId).setValue(i);
+
                         Intent productIntent = new Intent(CreateAd.this,Products.class);
                         productIntent.putExtra("AD","Product Created Successfully");
                         startActivity(productIntent);

@@ -1,6 +1,7 @@
 package com.example.myshoppingstore;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,11 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductA
         double d = model.getCondition();
         float rating = (float)d;
         holder.ratingBar.setRating(rating);
+        String productId = model.getId();
+
+        Log.i("productId", productId);
+
+
     }
 
     class ProductHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -66,6 +72,7 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductA
             Double productPrice = myCreateAd.getPrice();
             Double productCondition = myCreateAd.getCondition();
             String productDescription = myCreateAd.getDescription();
+            String productId = myCreateAd.getId();
 
             Intent detailsIntent = new Intent(v.getContext(), Details.class);
 
@@ -75,6 +82,7 @@ public class ProductAdapter extends FirebaseRecyclerAdapter<CreateForm, ProductA
             detailsIntent.putExtra("productPrice", productPrice);
             detailsIntent.putExtra("productDescription", productDescription);
             detailsIntent.putExtra("productCondition", productCondition);
+            detailsIntent.putExtra("productId", productId);
             v.getContext().startActivity(detailsIntent);
         }
 

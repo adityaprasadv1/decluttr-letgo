@@ -6,16 +6,17 @@ public class CreateForm {
     private String description;
     private double price;
     private double condition;
-
+    private String id;
     public CreateForm() {
     }
 
-    public CreateForm(String name, String image, String description, double price, double condition) {
+    public CreateForm(String name, String image, String description, double price, double condition, String id) {
         this.name = name;
         this.image = image;
         this.description = description;
         this.price = price;
         this.condition = condition;
+        this.id = id;
     }
 
     public String getName() {
@@ -56,5 +57,12 @@ public class CreateForm {
 
     public void setCondition(double condition) {
         this.condition = condition;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
