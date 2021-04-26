@@ -43,9 +43,9 @@ public class Checkout extends AppCompatActivity {
         });
 
 
-        Intent i = getIntent();
-        String name = i.getStringExtra("productName");
-        Double price = i.getDoubleExtra("productPrice", 0);
+        Intent detailsIntent = getIntent();
+        String name = detailsIntent.getStringExtra("productName");
+        Double price = detailsIntent.getDoubleExtra("productPrice", 0);
         Log.i("price", ""+ price);
 //        String brand = i.getStringExtra("brand");
 //        String image = i.getStringExtra("image");
@@ -144,21 +144,22 @@ public class Checkout extends AppCompatActivity {
                 }else{
                     mAuth = FirebaseAuth.getInstance().getCurrentUser();
                     String emailId = mAuth.getEmail();
-                    sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","message");
+                    sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear Valued Customer,\n\nThank you for buying "+name+" from Decluttr! You have spent $"+price+" for the purchase. Hope you loved the purchase!\n\nKeep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon.\n\n- Team Decluttr,\nRegion of Waterloo.");
 
-                    Intent inte = new Intent(v.getContext(), Confirmation.class);
-                    v.getContext().startActivity(inte);
+                    Intent confirmationIntent = new Intent(v.getContext(), Confirmation.class);
+                    v.getContext().startActivity(confirmationIntent);
                     finish();
                 }
             }
             else{
                 mAuth = FirebaseAuth.getInstance().getCurrentUser();
                   String emailId = mAuth.getEmail();
-                sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","message");
+                sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear Valued Customer,\n\nThank you for buying "+name+" from Decluttr! You have spent $"+price+" for the purchase. Hope you loved the purchase!\n\nKeep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon.\n\n- Team Decluttr,\nRegion of Waterloo.");
 
 
-                Intent inte = new Intent(v.getContext(), Confirmation.class);
-                v.getContext().startActivity(inte);
+                Intent confirmationIntent = new Intent(v.getContext(), Confirmation.class);
+                confirmationIntent.putExtra("productName",name);
+                v.getContext().startActivity(confirmationIntent);
                 finish();
             }
 //

@@ -16,12 +16,12 @@ public class Confirmation extends AppCompatActivity {
 
         //getting intent from previous activity to collect data passed from it
         Intent confirmationIntent = getIntent();
-        String productNameFromDB = confirmationIntent.getStringExtra("productName");
+        String productName = confirmationIntent.getStringExtra("productName");
 
         TextView txtThanksProductName;
         txtThanksProductName = findViewById(R.id.txtThanksProductName);
 
-        txtThanksProductName.setText(productNameFromDB);
+        txtThanksProductName.setText(productName);
 
         Button btnContinueShopping;
         btnContinueShopping = findViewById(R.id.btnContinueShopping);

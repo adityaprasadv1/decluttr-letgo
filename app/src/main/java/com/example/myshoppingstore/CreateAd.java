@@ -67,7 +67,7 @@ public class CreateAd extends AppCompatActivity {
             CreateForm i = new CreateForm();
             i.setImage("gs://my-shopping-store-auth.appspot.com/"+imgRef.getName());
 
-       
+
             name = txtName.getText().toString();
             description = txtDescription.getText().toString();
             stringPrice = txtPrice.getText().toString();
