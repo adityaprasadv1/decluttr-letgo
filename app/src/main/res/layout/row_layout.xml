@@ -28,7 +28,7 @@
             <ImageView
                 android:id="@+id/imgProductImage"
                 android:layout_width="140dp"
-                android:layout_height="wrap_content"
+                android:layout_height="140dp"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="1"
                 tools:srcCompat="@tools:sample/avatars" />

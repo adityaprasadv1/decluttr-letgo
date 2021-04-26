@@ -14,9 +14,13 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -37,9 +41,11 @@ public class CreateAd extends AppCompatActivity {
     String name;
     String description;
     double price;
-    String stringPrice;
+    double condition;
+    String stringPrice, stringCondition;
     Button  signoutBtn;
     FirebaseAuth mAuth;
+    Spinner spin;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -49,6 +55,8 @@ public class CreateAd extends AppCompatActivity {
             Bundle extras = data.getExtras();
             String uniqueID = UUID.randomUUID().toString();
             Bitmap imgBitmap = (Bitmap) extras.get("data");
+            ImageView takeImage = findViewById(R.id.takePhoto);
+            takeImage.setImageBitmap(imgBitmap);
             final StorageReference imgRef = storageRef.child(uniqueID);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             imgBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -58,14 +66,24 @@ public class CreateAd extends AppCompatActivity {
             imgRef.putBytes(imgData);
             CreateForm i = new CreateForm();
             i.setImage("gs://my-shopping-store-auth.appspot.com/"+imgRef.getName());
+
+
             name = txtName.getText().toString();
             description = txtDescription.getText().toString();
             stringPrice = txtPrice.getText().toString();
+            stringCondition = spin.getSelectedItem().toString();
+
+
             price = Double.valueOf(stringPrice);
+            double con = Double.parseDouble(stringCondition);
+
+
 //            Log.i("name",name);
             i.setName(name);
             i.setDescription(description);
             i.setPrice(price);
+            i.setCondition(con);
+            Log.i("stringCondition", "" + con);
             btnCreate.setOnClickListener(c -> {
                 if(txtName.getText().toString().isEmpty()){
                     txtName.setError("Please enter Product Name");
@@ -101,6 +119,7 @@ public class CreateAd extends AppCompatActivity {
         txtName = findViewById(R.id.txtName);
         txtDescription=findViewById(R.id.txtDescription);
         txtPrice=findViewById(R.id.txtPrice);
+        spin=findViewById(R.id.spinner1);
         btnCreate = findViewById(R.id.btnCreate);
         builder = new AlertDialog.Builder(this);
 
@@ -160,6 +179,16 @@ public class CreateAd extends AppCompatActivity {
                         }).show();
             }
         });
+
+        //get the spinner from the xml.
+        Spinner dropdown = findViewById(R.id.spinner1);
+//create a list of items for the spinner.
+        Double[] items = new Double[]{0.5,1.0,1.5,2.0, 2.5,3.0,3.5,4.0,4.5,5.0 };
+//create an adapter to describe how the items are displayed, adapters are used in several places in android.
+//There are multiple variations of this, but this is the basic variant.
+        ArrayAdapter<Double> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+//set the spinners adapter to the previously created one.
+        dropdown.setAdapter(adapter);
     }
 
     protected void dialog(CreateForm i){
@@ -185,4 +214,5 @@ public class CreateAd extends AppCompatActivity {
                 });
         builder.show();
     }
+
 }
