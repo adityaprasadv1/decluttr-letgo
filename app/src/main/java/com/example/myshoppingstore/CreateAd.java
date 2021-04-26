@@ -57,6 +57,7 @@ public class CreateAd extends AppCompatActivity {
             String uniqueID = UUID.randomUUID().toString();
             Bitmap imgBitmap = (Bitmap) extras.get("data");
             ImageView takeImage = findViewById(R.id.takePhoto);
+            takeImage.setVisibility(View.VISIBLE);
             takeImage.setImageBitmap(imgBitmap);
             final StorageReference imgRef = storageRef.child(uniqueID);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -121,6 +122,9 @@ public class CreateAd extends AppCompatActivity {
         spin=findViewById(R.id.spinner1);
         btnCreate = findViewById(R.id.btnCreate);
         builder = new AlertDialog.Builder(this);
+
+        ImageView takeImage = findViewById(R.id.takePhoto);
+        takeImage.setVisibility(View.GONE);
 
         btnCam.setOnClickListener(v ->{
 
