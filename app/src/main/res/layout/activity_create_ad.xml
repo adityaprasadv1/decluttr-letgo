@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-16dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
     <EditText
         android:id="@+id/txtName"
@@ -21,10 +21,11 @@
         android:ems="10"
         android:hint="Product Name"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline17" />
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <EditText
         android:id="@+id/txtDescription"
@@ -33,6 +34,7 @@
         android:ems="10"
         android:hint="Description"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,24 +47,13 @@
         android:ems="10"
         android:hint="Price"
         android:inputType="number|textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/spinner1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription" /><![CDATA[
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:backgroundTint="#ffffff"
-        android:backgroundTintMode="multiply"
-        android:foregroundTint="#FFFFFF"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPrice" /><![CDATA[
+
 
 
     app:layout_constraintStart_toStartOf="parent"
@@ -74,14 +65,51 @@
 
 
 
+
+
+
+
+
+
+
+
     ]]>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product Condition"
+        app:layout_constraintBottom_toTopOf="@+id/btnCam"
+        app:layout_constraintEnd_toStartOf="@+id/spinner1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/include"
+        app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:backgroundTint="#ffffff"
+        android:backgroundTintMode="multiply"
+        android:foregroundTint="#FFFFFF"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/btnCam"
+        app:layout_constraintEnd_toStartOf="@+id/include"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
 
     <Button
         android:id="@+id/btnCam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FB641B"
         android:text="Take Photo"
+        app:layout_constraintBottom_toTopOf="@+id/takePhoto"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
@@ -89,25 +117,21 @@
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="304dp"
+        android:backgroundTint="#FB641B"
         android:text="Create"
+        app:layout_constraintBottom_toTopOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCam" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.09" />
+        app:layout_constraintTop_toBottomOf="@+id/takePhoto" />
 
     <ImageView
         android:id="@+id/takePhoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreate"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCam"
         tools:srcCompat="@tools:sample/avatars" />

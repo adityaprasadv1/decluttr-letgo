@@ -144,7 +144,7 @@ public class Checkout extends AppCompatActivity {
                 }else{
                     mAuth = FirebaseAuth.getInstance().getCurrentUser();
                     String emailId = mAuth.getEmail();
-                    sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear Valued Customer,\n\nThank you for buying "+name+" from Decluttr! You have spent $"+price+" for the purchase. Hope you loved the purchase!\n\nKeep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon.\n\n- Team Decluttr,\nRegion of Waterloo.");
+                    sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear " + editName.getText().toString()+", <br> <br>Thank you for buying <b>"+name+"</b> from Decluttr! You have spent <b>$"+price+"</b> for the purchase. Hope you loved the purchase! <br> <br>Keep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon. <br> <br>- Team Decluttr, <br>Region of Waterloo.");
 
                     Intent confirmationIntent = new Intent(v.getContext(), Confirmation.class);
                     v.getContext().startActivity(confirmationIntent);
@@ -154,7 +154,7 @@ public class Checkout extends AppCompatActivity {
             else{
                 mAuth = FirebaseAuth.getInstance().getCurrentUser();
                   String emailId = mAuth.getEmail();
-                sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear Valued Customer,\n\nThank you for buying "+name+" from Decluttr! You have spent $"+price+" for the purchase. Hope you loved the purchase!\n\nKeep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon.\n\n- Team Decluttr,\nRegion of Waterloo.");
+                sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear " + editName.getText().toString()+", <br> <br>Thank you for buying <b>"+name+"</b> from Decluttr! You have spent <b>$"+price+"</b> for the purchase. Hope you loved the purchase! <br> <br>Keep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon. <br> <br>- Team Decluttr, <br>Region of Waterloo.");
 
 
                 Intent confirmationIntent = new Intent(v.getContext(), Confirmation.class);
@@ -175,7 +175,7 @@ public class Checkout extends AppCompatActivity {
             public void run() {
                 try {
                     GMailSender sender = new GMailSender(Sender,Password);
-                    sender.sendMail(Title, "<b>"+Message+"</b>", Sender, Receiver);
+                    sender.sendMail(Title, Message, Sender, Receiver);
                 } catch (Exception e) {
                     Log.e("SendMail", e.getMessage(), e);
                 }
