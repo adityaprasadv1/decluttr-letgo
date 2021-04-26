@@ -147,6 +147,7 @@ public class Checkout extends AppCompatActivity {
                     sendEmail("decluttrletgo@gmail.com","decluttr2021",emailId,"Successfully Purchased","Dear " + editName.getText().toString()+", <br> <br>Thank you for buying <b>"+name+"</b> from Decluttr! You have spent <b>$"+price+"</b> for the purchase. Hope you loved the purchase!<br><br>Keep checking our Mobile Application to buy wide range of exciting products and to sell your own great products! We will see you there soon. <br> <br>- Team Decluttr, <br>Region of Waterloo.");
 
                     Intent confirmationIntent = new Intent(v.getContext(), Confirmation.class);
+                    confirmationIntent.putExtra("productName",name);
                     v.getContext().startActivity(confirmationIntent);
                     finish();
                 }

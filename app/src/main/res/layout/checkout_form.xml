@@ -199,23 +199,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
-                    android:backgroundTint="#FFFFFF"
+                    android:backgroundTint="#FB641B"
                     android:text="BUY NOW"
-                    android:textColor="#FC9C4D"
-                    app:strokeColor="#fc9c4d"
-                    app:strokeWidth="1dp" />
+                    android:textColor="#ffffff" />
 
                 <Button
                     android:id="@+id/cancelButtonID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="#FFFFFF"
+                    android:backgroundTint="#FB641B"
                     android:text="Cancel"
-                    android:textColor="#FC9C4D"
-                    app:strokeColor="#fc9c4d"
-                    app:strokeWidth="1dp" />
+                    android:textColor="#ffffff" />
             </LinearLayout>
 
         </LinearLayout>
