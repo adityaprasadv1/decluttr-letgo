@@ -15,8 +15,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="379dp"
-        android:layout_height="618dp"
+        android:layout_width="380dp"
+        android:layout_height="663dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
@@ -98,10 +98,10 @@
                     android:justificationMode="inter_word"
                     android:paddingLeft="10sp"
                     android:paddingRight="10sp"
-                    android:text="Product Description"
+                    android:text="&quot;Outfitted with a performance-based outsole, the 680v6 is a reliable upgrade from our popular 680 men's running shoe. Plus, a mesh upper provides a conforming and comfortable fit.&quot;"
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
         </ScrollView>
 
